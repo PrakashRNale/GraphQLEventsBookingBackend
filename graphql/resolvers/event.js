@@ -18,7 +18,10 @@ module.exports = {
     name : () =>{
         return "Prakash"
     },
-    createEvent : (args) =>{
+    createEvent : (args , req) =>{
+        if(!req.isAuth){
+            throw new Error('User not authenticated')
+        }
         let createdEvent;
         const event = new Event({
             title : args.eventInput.title,

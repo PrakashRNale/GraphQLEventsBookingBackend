@@ -4,10 +4,14 @@ const graphqlHttp = require('express-graphql');
 const { buildSchema } = require('graphql');
 const mongoose = require('mongoose');
 
+const isAuth = require('./auth/auth');
+
 const rootResolver = require('./graphql/resolvers/index');
 const schema = require('./graphql/schema/index');
 
 const app = express();
+
+app.use(isAuth)
 
 app.use(bodyParser.json());
 // Following graphqlHttp function is a middleware function that we have to pass to normal express application
