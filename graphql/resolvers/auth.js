@@ -5,6 +5,7 @@ const User = require('../../model/user');
 
 module.exports = {
     createUser : (args) =>{
+        console.log(args);
         return User.findOne({email : args.userInput.email}).then(user =>{
             if(user){
                 throw new Error('User already exists');

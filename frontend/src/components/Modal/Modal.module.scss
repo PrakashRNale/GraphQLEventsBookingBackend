@@ -1,0 +1,35 @@
+.Modal{
+    width : 80%;
+    position: fixed;
+    top : 30vh;
+    left: 5%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0 , 0 , 0 , 0.25);
+
+    .Heading{
+        background-color: #4918c8;
+        padding: 0.5rem;
+        color: white;
+
+        h3{
+            font-size: 1rem;;
+        }
+    }
+
+    .Content{
+        padding: 1rem;
+    }
+
+    .Actions{
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+    }
+}
+
+@media(min-width : 600px){
+    .Modal{
+        width: 30rem;
+        left : calc((100% - 30rem) /2)
+    }
+}
